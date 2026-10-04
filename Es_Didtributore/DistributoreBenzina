@@ -1,0 +1,118 @@
+public class DistributoreBenzina {
+
+    private double deposito;
+    private double euroPerLitro;
+
+    // costruttore senza parametri
+    public DistributoreBenzina() {
+        this.deposito = 0.0;
+        this.euroPerLitro = 0.0;
+    }
+
+    // costruttore con parametri
+    public DistributoreBenzina(double prezzo) {
+
+        this.deposito = 0.0;
+
+        if (prezzo > 0.0) {
+            this.euroPerLitro = prezzo;
+        }
+        else {
+            this.euroPerLitro = 0.0;
+        }
+    }
+
+    // getter deposito
+    public double getDeposito() {
+        return this.deposito;
+    }
+
+    // setter deposito
+    public void setDeposito(double quantita) {
+
+        if (quantita >= 0.0) {
+            this.deposito = quantita;
+        }
+        else {
+            this.deposito = 0.0;
+        }
+    }
+
+    // getter prezzo
+    public double getEuroPerLitro() {
+        return this.euroPerLitro;
+    }
+
+    // setter prezzo
+    public void setEuroPerLitro(double prezzo) {
+
+        if (prezzo > 0.0) {
+            this.euroPerLitro = prezzo;
+        }
+        else {
+            this.euroPerLitro = 0.0;
+        }
+    }
+
+    // rifornisce il distributore
+    public void rifornisci(double quantita) {
+
+        if (quantita > 0.0) {
+            this.deposito += quantita;
+        }
+        else {
+            System.out.println("La quantita deve essere maggiore di 0");
+        }
+    }
+
+    // vende benzina alla macchina
+    public void vendi(double euro, Car automobile) {
+
+        if (euro > 0.0) {
+
+            if (automobile != null) {
+
+                if (this.euroPerLitro > 0.0) {
+
+                    double quantita = euro / this.euroPerLitro;
+
+                    if (quantita <= this.deposito) {
+
+                        this.deposito -= quantita;
+                        automobile.addGas(quantita);
+
+                    }
+                    else {
+                        System.out.println("Benzina insufficiente");
+                    }
+                }
+                else {
+                    System.out.println("Prezzo della benzina non valido");
+                }
+            }
+            else {
+                System.out.println("Automobile non valida");
+            }
+        }
+        else {
+            System.out.println("Gli euro devono essere maggiori di 0");
+        }
+    }
+
+    // aggiorna il prezzo
+    public void aggiorna(double prezzo) {
+
+        if (prezzo > 0.0) {
+            this.euroPerLitro = prezzo;
+        }
+        else {
+            System.out.println("Il prezzo deve essere maggiore di 0");
+        }
+    }
+
+    // toString
+    public String toString() {
+        return "deposito: " + this.deposito +
+               "\n euro per litro: " + this.euroPerLitro;
+    }
+}

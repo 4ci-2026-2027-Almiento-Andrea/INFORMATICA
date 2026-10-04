@@ -1,0 +1,73 @@
+public class Car{
+    private double resa;
+    private double carburante;
+
+    public Car(){
+        this.resa = 0.0;
+        this.carburante = 0.0;
+    }
+
+    public Car(double r, double c) {
+        if (r > 0.0){
+            this.resa = r;
+        }
+        else{
+            this.resa = 0.0;
+        }
+
+        if (c >= 0.0){
+            this.carburante = c;
+        }
+        else{
+            this.carburante = 0.0;
+        }
+
+    }
+    public double getResa(){
+        return this.resa;
+    }
+
+    public void setResa(double r){
+        if(r > 0.0){
+            this.resa = r;
+        }
+        else{
+            this.resa = 0.0;
+        }
+    }
+    
+    public double getGas(){
+        return this.carburante;
+    }
+    public void setGas(double c){
+        if (c >= 0.0){
+            this.carburante = c;
+        }
+        else {
+            this.carburante = 0.0;
+        }
+    }
+
+    public void drive(double km){
+        if(km  > 0.0){
+            double consumato = km * this.resa;
+            if(consumato <= this.carburante){
+                this.carburante -= consumato;
+            }
+
+            else{
+                System.out.println("Carburante insufficente");
+            }
+
+        }
+        else{
+            System.out.println("I km devono essere maggiori di 0");
+        }
+    
+    }
+
+    public String toString(){
+        return "resa: " + this.resa + "\n carburante: " + this.carburante;
+    }
+
+}

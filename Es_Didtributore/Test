@@ -1,0 +1,62 @@
+public class Test {
+
+    public static void main(String[] args) {
+
+        Car macchina1 = new Car(0.05, 10.0);
+        Car macchina2 = new Car(0.08, 15.0);
+        Car macchina3 = new Car(0.06, 20.0);
+
+        DistributoreBenzina distributore = new DistributoreBenzina(1.80);
+
+        distributore.rifornisci(100.0);
+
+        System.out.println("Situazione iniziale:");
+        System.out.println(macchina1);
+        System.out.println(macchina2);
+        System.out.println(macchina3);
+
+        macchina1.drive(100.0);
+        macchina2.drive(100.0);
+        macchina3.drive(200.0);
+
+        System.out.println();
+        System.out.println("Dopo i primi viaggi:");
+        System.out.println(macchina1);
+        System.out.println(macchina2);
+        System.out.println(macchina3);
+
+        distributore.vendi(18.0, macchina1);
+        distributore.vendi(27.0, macchina2);
+        distributore.vendi(36.0, macchina3);
+
+        System.out.println();
+        System.out.println("Dopo il rifornimento:");
+        System.out.println(macchina1);
+        System.out.println(macchina2);
+        System.out.println(macchina3);
+
+        macchina1.drive(200.0);
+        macchina2.drive(150.0);
+        macchina3.drive(100.0);
+
+        System.out.println();
+        System.out.println("Dopo altri viaggi:");
+        System.out.println(macchina1);
+        System.out.println(macchina2);
+        System.out.println(macchina3);
+
+        distributore.aggiorna(1.90);
+
+        distributore.rifornisci(50.0);
+
+        distributore.vendi(19.0, macchina1);
+
+        System.out.println();
+        System.out.println("Dopo l'ultimo rifornimento:");
+        System.out.println(macchina1);
+
+        System.out.println();
+        System.out.println("Situazione distributore:");
+        System.out.println(distributore);
+    }
+}
