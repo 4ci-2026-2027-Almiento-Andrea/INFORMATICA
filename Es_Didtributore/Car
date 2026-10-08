@@ -31,9 +31,7 @@ public class Car{
         if(r > 0.0){
             this.resa = r;
         }
-        else{
-            this.resa = 0.0;
-        }
+       
     }
     
     public double getGas(){
@@ -43,26 +41,27 @@ public class Car{
         if (c >= 0.0){
             this.carburante = c;
         }
-        else {
-            this.carburante = 0.0;
-        }
+        
     }
 
     public void drive(double km){
+        double consumato;
         if(km  > 0.0){
-            double consumato = km * this.resa;
+            consumato= km * this.resa;
             if(consumato <= this.carburante){
                 this.carburante -= consumato;
             }
-
-            else{
+            //non ci sono I/O dentro i metodi delle classi MODEL. e' UN ERRORE GRAVE
+            /*else{
                 System.out.println("Carburante insufficente");
-            }
+            }*/ 
 
         }
-        else{
+        //non ci sono I/O dentro i metodi delle classi MODEL. e' UN ERRORE GRAVE
+        //se vuoi segnalare un errore o restituisci un valore String oppure usi le Eccezioni
+        /*else{
             System.out.println("I km devono essere maggiori di 0");
-        }
+        }*/
     
     }
 
