@@ -33,9 +33,7 @@ public class DistributoreBenzina {
         if (quantita >= 0.0) {
             this.deposito = quantita;
         }
-        else {
-            this.deposito = 0.0;
-        }
+       
     }
 
     // getter prezzo
@@ -49,9 +47,7 @@ public class DistributoreBenzina {
         if (prezzo > 0.0) {
             this.euroPerLitro = prezzo;
         }
-        else {
-            this.euroPerLitro = 0.0;
-        }
+       
     }
 
     // rifornisce il distributore
@@ -82,21 +78,13 @@ public class DistributoreBenzina {
                         automobile.addGas(quantita);
 
                     }
-                    else {
-                        System.out.println("Benzina insufficiente");
-                    }
+                    
                 }
-                else {
-                    System.out.println("Prezzo della benzina non valido");
-                }
+                
             }
-            else {
-                System.out.println("Automobile non valida");
-            }
+            
         }
-        else {
-            System.out.println("Gli euro devono essere maggiori di 0");
-        }
+        
     }
 
     // aggiorna il prezzo
@@ -105,9 +93,7 @@ public class DistributoreBenzina {
         if (prezzo > 0.0) {
             this.euroPerLitro = prezzo;
         }
-        else {
-            System.out.println("Il prezzo deve essere maggiore di 0");
-        }
+        
     }
 
     // toString
